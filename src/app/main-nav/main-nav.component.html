@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="main-wrapper">
+		<div class="wrapper">
+			
+			<div class="row">
+				<div class="col-md-12">
+						<ul>
+							<li class = "links"><a (click)="redirectTo('featured')">Featured Songs</a></li>
+							<li class = "links"><a (click)="redirectTo('home')">Home</a></li>
+							<li class = "links"><a (click)="redirectTo('about')">About</a></li>
+							<li class = "links"><a (click)="redirectTo('signup')">SignUp</a></li>
+							<li class = "links"><a (click)="redirectTo('signin')">SignIn</a></li>
+					
+						</ul>	
+					</div>
+
+					<div class="col-md-12" id = "signin">
+						<div class="signInForm">
+							<fieldset>
+								<legend>Sign In</legend>
+								<form [formGroup] = 'signInForm' (submit) = "login(signInForm)">
+									<div class="form-group col-md-4">
+										<label for="username">Username
+											<input type="text" class = 'form-control' name="username" id="username" formControlName = 'username'>
+										</label>
+									</div>
+									<div class="form-group col-md-4">
+										<label for="password">Password
+											<input type="password" name="password" id="password" formControlName = "password" class="form-control">
+										</label>
+
+										
+									</div>
+
+									<div class="form-group col-md-4">
+										<button class="form-control btn-primary">Sign-In</button>
+									</div>
+								</form>
+							</fieldset>
+							
+						</div>
+					</div>
+			</div>
+
+			<div class="banner">
+				<img src="../assets/banner.jpg" alt="">
+			</div>
+
+					
+		</div>
+	</div>
+</div>

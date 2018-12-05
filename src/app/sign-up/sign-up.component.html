@@ -1,0 +1,60 @@
+
+<div class="signUp" id="signUp">
+			<fieldset>
+				<legend>Signup</legend>
+				<form [formGroup] = 'signUpForm' (submit) = "signUp(signUpForm)">
+					<table>
+						<tr>
+							<th>First Name</th>
+							<td><input type="text" name="firstName" formControlName = "firstName" id="firstName" class="form-control"></td>
+						</tr>
+
+						<tr>
+							<th>Last Name</th>
+							<td><input type="text" name="lastName" formControlName = "lastName" id="lastName" class="form-control"></td>
+						</tr>
+
+
+						<tr>
+							<th>Username</th>
+							<td>
+								<div class="form-group">
+								<input type="text" name="signUpUsername" id="signUpUsername" formControlName = 'signUpUsername' class="form-control">
+								</div>
+								
+							</td>
+						</tr>
+
+						<tr>
+							<th>Password</th>
+							<td>
+								<div class="form-group">
+									<input type="password" name="signUpPassword" formControlName = "signUpPassword" id="signUpPassword" class="form-control">
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<th>Email</th>
+							<td>
+								<div class="form-group">
+									<input type="email" name="email" formControlName = "email" id="email" class="form-control">
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<th>Phone Number</th>
+							<td>
+								<div class="form-group">
+									<input type="number" name="phone" formControlName = "phone" id="phone" class="form-control">
+								</div>
+							</td>
+						</tr>
+
+					</table>
+
+					<button class="form-control btn btn-md btn-primary">Sign Up</button>
+				</form>
+			</fieldset>
+		</div>
