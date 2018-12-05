@@ -1,0 +1,38 @@
+.row{
+	margin-bottom: -200px;
+	margin-top: 10%;
+	opacity: 0.9;
+	position: absolute;
+	color: white;
+}
+
+.form-control{
+	display: inline-block;
+}
+.links{
+	color: white;
+	list-style-type: none;
+	display: inline-block;
+	border: 2px solid #000;
+	margin: 10px;
+	cursor: pointer;
+}
+.signInForm{
+	margin-top: 200px;
+	color: black;
+}
+
+img {
+	height: 329px;
+	width: 100%;
+}
+
+a{
+	color: white;
+}
+
+.links:hover{
+	border: 2px solid red;
+	color: skyblue;
+}
+
