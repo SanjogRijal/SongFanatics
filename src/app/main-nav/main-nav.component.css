@@ -6,8 +6,15 @@
 	color: white;
 }
 
+.footer{
+	margin-top:380px;
+}
+
 .form-control{
 	display: inline-block;
+}
+#signin{
+	margin-left: 50%;
 }
 .links{
 	color: white;

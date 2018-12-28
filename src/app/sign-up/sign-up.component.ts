@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { SignUpService } from './sign-up.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +13,7 @@ export class SignUpComponent implements OnInit {
 
   signUpForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: SignUpService, private router: Router) { }
 
   ngOnInit() {
   	
@@ -47,7 +48,7 @@ export class SignUpComponent implements OnInit {
     }
 
     this.service.insertUser(signUpObject).subscribe(()=> {});
-    this.router.navigate('');
+    this.router.navigate(['']);
   }
 
 }

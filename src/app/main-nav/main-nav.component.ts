@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
+import { MainNavService } from './main-nav.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
-  styleUrls: ['./main-nav.component.css']
+  styleUrls: ['./main-nav.component.css'],
+  providers: [MainNavService]
 })
 export class MainNavComponent implements OnInit {
   signInForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: MainNavService, private router: Router) { }
 
   ngOnInit() {
     this.signInForm = this.fb.group({
@@ -16,10 +19,6 @@ export class MainNavComponent implements OnInit {
       password: [null, Validators.compose([Validators.required, Validators.minLength(8)])],
     });
 
-  }
-
-  login(fg: FormGroup){
-    console.log(fg.value);
   }
 
   redirectTo(navigate){
@@ -74,6 +73,18 @@ export class MainNavComponent implements OnInit {
         console.log("Unexpected Error Occured");
         break;
     }
+  }
+
+  login(fg: FormGroup){
+    this.service.signIn(fg.value.username,fg.value.password).subscribe((userData: any) => {
+      if(userData.length > 0){
+        localStorage.setItem('sessionItem',userData[0].id);
+        console.log(localStorage.getItem('sessionItem'));
+        this.router.navigate(['homepage']);
+      } else {
+        alert("Username and password do not match");
+      }
+    });
   }
 
 }

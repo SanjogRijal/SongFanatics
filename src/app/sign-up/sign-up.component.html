@@ -1,7 +1,6 @@
 
 <div class="signUp" id="signUp">
 			<fieldset>
-				<legend>Signup</legend>
 				<form [formGroup] = 'signUpForm' (submit) = "signUp(signUpForm)">
 					<table>
 						<tr>
@@ -51,10 +50,18 @@
 								</div>
 							</td>
 						</tr>
-
+						
+						<tr>
+							<th></th>
+							<td>
+					<button class="form-control btn btn-md btn-primary">Sign Up</button>
+								
+							</td>
+						</tr>
 					</table>
 
-					<button class="form-control btn btn-md btn-primary">Sign Up</button>
 				</form>
 			</fieldset>
 		</div>
+
+		<app-footer class = 'footer'></app-footer>

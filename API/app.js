@@ -7,13 +7,6 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 
-var allowCrossDomain = function(req, res, next) {
-	res.header('Access-Control-Allow-Origin', '*');
-	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With, auth');
-
-	next();
-};
 
 var db = mysql.createConnection({
 	host: 'localhost',
@@ -32,13 +25,22 @@ db.connect(function(err){
 		}
 });
 
+var allowCrossDomain = function(req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With, auth');
+
+	next();
+};
+
+
 app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(routes);
 
 
-const PORT = 8888;
+const PORT = 8080;
 
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`)

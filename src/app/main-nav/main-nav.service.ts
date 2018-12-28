@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
-export class SignUpService {
+export class MainNavService {
 
   constructor(private http: HttpClient) { }
 
-  insertUser(signUpObject){
-  	return this.http.post('http://localhost:8080/insert/user',signUpObject);
+  signIn(username,password){
+  	return this.http.get('http://localhost:8080/signin/'+username+'/'+password);
   }
+
 }
