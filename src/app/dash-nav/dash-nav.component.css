@@ -1,0 +1,32 @@
+.links{
+	display: inline-block;
+	list-style-type: none;
+	color: black;
+	padding: 30px;
+}
+
+#logout{
+	color: blue;
+}
+
+#logout:hover{
+	text-decoration: underline;
+}
+
+a{
+	cursor: pointer;
+	color: red;
+	border: 2px solid black;
+	opacity: 1;
+	background-color: black;
+}
+
+.linking{
+	margin-top: -100px;
+}
+
+img{
+	opacity: 1;
+	height: 200px;
+	width: 100%;
+}

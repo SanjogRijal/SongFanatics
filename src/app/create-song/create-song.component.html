@@ -1,0 +1,89 @@
+<app-dash-nav></app-dash-nav>
+<div class="container">
+	<div class="main-wrapper">
+		<div class="wrapper">
+			<div class="form-div">
+				<fieldset>
+					<h1 id = "formHeading">Create Song <i class="fas fa-compact-disc"></i></h1>
+					<form [formGroup] = "createSongForm" (submit) = "createSong(createSongForm)" ngNativeValidate>
+						<table>
+							<tr>
+								<th>Song Name</th>
+								<td>
+									<div class="form-group">
+										<input type="text" formControlName="songName" id="songName" class="form-control" required>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th>Single Flag</th>
+								<td>
+									<div>
+										<input type="checkbox" formControlName="singleFlag" id="singleFlag">
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th>Artist</th>
+								<td>
+									<div class="form-group">
+										<select name="artist" formControlName = "artist" id="artist" required>
+											<option [ngValue] = null></option>
+											<option *ngFor = "let artist of this.allArtists" [ngValue] ="artist.artistID" >{{artist.artistName}}</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th>Album</th>
+								<td>
+									<div class="form-group">
+										<select name="album" formControlName = "album" id="album">
+											<option [ngValue]=null selected disabled>--Select Song--</option>
+											<option *ngFor = "let album of this.albumsData" [value] = "album.albumID">{{album.albumName}}</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th>Release Date</th>
+								<td>
+									<div class="form-group">
+										<input type="date" formControlName="releaseDate" id="songReleaseDate">
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th>Youtube Link/VideoID</th>
+								<td>
+									<div class = "form-group">
+										<input type="text" formControlName = "youtubeID" id="youtubeID" class="form-control">
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th></th>
+								<td>
+									<div class="form-group">
+										<button class = "btn btn-success" id="submtBttn">Save</button>
+									</div>
+								</td>
+							</tr>
+
+						</table>
+					</form>
+				</fieldset>
+
+			</div>
+		</div>
+	</div>
+	<app-footer></app-footer>
+</div>
+
+                      

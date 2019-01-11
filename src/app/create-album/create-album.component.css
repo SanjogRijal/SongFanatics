@@ -1,0 +1,17 @@
+
+.container{
+	border: 2px solid red;
+	margin-top: 10px;
+}
+.main-wrapper{
+	margin: 0px 0px 100px 100px;
+	align-items: center;
+}
+#formHeading{
+	margin-top: 50px;
+	font-size: 2em;
+}
+
+form{
+	margin-top: 50px;
+}

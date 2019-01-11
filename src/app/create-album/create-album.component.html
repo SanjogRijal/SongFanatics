@@ -1,0 +1,76 @@
+<app-dash-nav></app-dash-nav>
+<div class="container">
+	<div class="main-wrapper">
+		<div class="wrapper">
+			<div class="form-div">
+				<fieldset>
+					<h1 id = "formHeading">Create Albums <i class="fas fa-compact-disc"></i></h1>
+					<form [formGroup] = "createAlbumForm" (submit) = "createAlbum(createAlbumForm)">
+						<table>
+							<tr>
+								<th>Album Name</th>
+								<td>
+									<div class="form-group">
+										<input type="text" formControlName="albumName" id="albumName" class="form-control">
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th>Artist</th>
+								<td>
+									<div class="form-group">
+										<select formControlName="artist" id="artist">
+											<option [ngValue]=null selected disabled>--Select Artist--</option>
+											<option *ngFor = "let artist of this.artistData">{{artist.artistName}}</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th>Release Date</th>
+								<td>
+									<div class="form-group">
+										<input type="date" formControlName="releaseDate" id="releaseDate" class="form-control">
+									</div>
+								</td>
+							</tr>		
+
+							<tr>
+								<th>Logo</th>
+								<td>
+									<div class = "form-group">
+										<input type="file" name="logo" id="logo">
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th>Youtube Link/VideoID</th>
+								<td>
+									<div class = "form-group">
+										<input type="text" formControlName = "youtubeID" id="youtubeID" class="form-control">
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<th></th>
+								<td>
+									<div class="form-group">
+										<button type="submit" class = "btn btn-success" id="submtBttn">Save</button>
+									</div>
+								</td>
+							</tr>
+
+						</table>
+					</form>
+				</fieldset>
+
+			</div>
+		</div>
+	</div>
+	<app-footer></app-footer>
+</div>
+

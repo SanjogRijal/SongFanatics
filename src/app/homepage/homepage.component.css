@@ -1,0 +1,11 @@
+.content{
+	margin-top: 50px;
+}
+
+.content{
+	background: #ffffff;
+}
+
+#albums, #artists, #songs{
+	border: 1px solid #123fff;
+}

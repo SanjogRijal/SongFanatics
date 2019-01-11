@@ -1,0 +1,25 @@
+<app-dash-nav></app-dash-nav>
+<div class="container">
+	<div class="main-wrapper">
+		<div class="wrapper">
+			<div class="content">
+				<div class="row">
+					<div class="col-md-4" id = "albums">
+						Albums
+						<ul>
+							<li *ngFor = "let album of allAlbums">{{album.albumName}}</li>
+						</ul>		
+
+						
+					</div>
+					<div class="col-md-4" id = "artists">
+						Artists:
+					</div>
+					<div class="col-md-4" id = "songs">
+						Songs
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
